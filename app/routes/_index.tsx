@@ -1,15 +1,26 @@
-import { json, type MetaFunction } from '@remix-run/cloudflare';
+import { type LoaderFunctionArgs, type MetaFunction } from '@remix-run/cloudflare';
 import { ClientOnly } from 'remix-utils/client-only';
 import { BaseChat } from '~/components/chat/BaseChat';
 import { Chat } from '~/components/chat/Chat.client';
 import { Header } from '~/components/header/Header';
 import BackgroundRays from '~/components/ui/BackgroundRays';
+import { requireAuth } from '~/utils/auth.server';
 
 export const meta: MetaFunction = () => {
-  return [{ title: 'Bolt' }, { name: 'description', content: 'Talk with Bolt, an AI assistant from StackBlitz' }];
+  return [
+    { title: 'Wider App Builder' },
+    { name: 'description', content: 'Talk with Wider App Builder, an AI assistant from Wider ML' },
+  ];
 };
 
-export const loader = () => json({});
+export async function loader({ request }: LoaderFunctionArgs) {
+  const { accessToken, refreshToken } = await requireAuth(request);
+
+  return {
+    accessToken,
+    refreshToken,
+  };
+}
 
 /**
  * Landing page component for Bolt
