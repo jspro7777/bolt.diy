@@ -11,7 +11,7 @@ const toSlug = (name: string) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').
 
 export default function EcommerceWizard() {
   const [step, setStep] = useState(0);
-  const [name, setName] = useState('Mi Tienda');
+  const [name, setName] = useState('Glup');
   const [primaryColor, setPrimaryColor] = useState('#111827');
   const [accentColor, setAccentColor] = useState('#2563EB');
   const [logoDataUrl, setLogoDataUrl] = useState<string | undefined>(undefined);
@@ -102,7 +102,7 @@ export default function EcommerceWizard() {
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 12 }}>
           <div>
             <label>Nombre de la tienda</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Mi Tienda" />
+            <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Glup" />
           </div>
           <div>
             <label>Slug</label>
