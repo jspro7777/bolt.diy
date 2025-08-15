@@ -18,8 +18,8 @@ export default function EcommerceWizard() {
   const [useStripeConnect, setUseStripeConnect] = useState(true);
 
   const [products, setProducts] = useState<ProductForm[]>([
-    { name: 'Producto A', price: 1999, currency: 'USD', description: 'Descripción', image: 'https://picsum.photos/seed/a/600/400' },
-    { name: 'Producto B', price: 2999, currency: 'USD', description: 'Descripción', image: 'https://picsum.photos/seed/b/600/400' },
+    { name: 'Producto A', price: 1999, currency: 'USD', description: 'Descripción', image: '/brand/images/product-1.svg' },
+    { name: 'Producto B', price: 2999, currency: 'USD', description: 'Descripción', image: '/brand/images/product-2.svg' },
   ]);
 
   const [generatedDir, setGeneratedDir] = useState<string | undefined>(undefined);
@@ -166,9 +166,11 @@ export default function EcommerceWizard() {
       </div>
 
       {generatedDir && (
-        <div className="card" style={{ marginTop: 16 }}>
+                  <div className="card" style={{ marginTop: 16 }}>
           <h3>Proyecto generado</h3>
           <p>Directorio: <code>{generatedDir}</code></p>
+          <p style={{ color: '#666' }}>Banners disponibles: <code>/brand/images/banner-1.svg</code>, <code>/brand/images/banner-2.svg</code></p>
+          <p style={{ color: '#666' }}>Productos de ejemplo: <code>/brand/images/product-1.svg</code>, <code>/brand/images/product-2.svg</code>, <code>/brand/images/product-3.svg</code></p>
           <RunButtons projectDir={generatedDir} />
         </div>
       )}
