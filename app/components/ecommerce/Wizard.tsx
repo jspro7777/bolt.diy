@@ -14,7 +14,7 @@ export default function EcommerceWizard() {
   const [name, setName] = useState('Glup');
   const [primaryColor, setPrimaryColor] = useState('#111827');
   const [accentColor, setAccentColor] = useState('#2563EB');
-  const [logoDataUrl, setLogoDataUrl] = useState<string | undefined>(undefined);
+  const [logoDataUrl, setLogoDataUrl] = useState<string | undefined>('/brand/logo.svg');
   const [useStripeConnect, setUseStripeConnect] = useState(true);
 
   const [products, setProducts] = useState<ProductForm[]>([

@@ -125,6 +125,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </nav>
         </header>
         <main className="container">{children}</main>
+        <footer>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            ${logoDataUrl ? `<img src="${logoDataUrl}" alt="logo" style={{ height: 20 }} />` : ''}
+            <span style={{ fontWeight: 700 }}>{"${storeName}"}</span>
+          </div>
+        </footer>
       </body>
     </html>
   );
