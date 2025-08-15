@@ -16,6 +16,7 @@ import { cubicEasingFn } from '~/utils/easings';
 import { renderLogger } from '~/utils/logger';
 import { EditorPanel } from './EditorPanel';
 import { Preview } from './Preview';
+import { Ports } from './Ports';
 import useViewport from '~/lib/hooks';
 import Cookies from 'js-cookie';
 
@@ -30,6 +31,10 @@ const sliderOptions: SliderOptions<WorkbenchViewType> = {
   left: {
     value: 'code',
     text: 'Code',
+  },
+  center: {
+    value: 'ports',
+    text: 'Ports',
   },
   right: {
     value: 'preview',
@@ -230,6 +235,12 @@ export const Workbench = memo(({ chatStarted, isStreaming }: WorkspaceProps) => 
                     onFileSave={onFileSave}
                     onFileReset={onFileReset}
                   />
+                </View>
+                <View
+                  initial={{ x: selectedView === 'ports' ? 0 : '0%' }}
+                  animate={{ x: selectedView === 'ports' ? 0 : '0%' }}
+                >
+                  <Ports />
                 </View>
                 <View
                   initial={{ x: selectedView === 'preview' ? 0 : '100%' }}
