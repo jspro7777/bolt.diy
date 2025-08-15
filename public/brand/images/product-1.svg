@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+	<defs>
+		<linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#F3F4F6"/>
+			<stop offset="100%" stop-color="#E5E7EB"/>
+		</linearGradient>
+	</defs>
+	<rect width="600" height="400" rx="16" fill="url(#pbg)"/>
+	<circle cx="300" cy="180" r="80" fill="#D1D5DB"/>
+	<rect x="180" y="300" width="240" height="28" rx="6" fill="#9CA3AF"/>
+</svg>
